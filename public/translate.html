@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="translateApp">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+  </head>
+  <body ng-controller = "translateController">
+
+  <h1>{{greeting}} </h1>
+	  <form ng-submit = "submit()">
+      <input ng-model = "trans.word"      type = 'text' placeholder = 'Enter Word'>
+      <input ng-model = "trans.language"  type = 'text' placeholder = 'Translate to What Language?'>
+      <input type = 'submit' >
+</form>
+      <ul ng-repeat="data in trans">
+        <li> {{trans.word}}</li>
+        <li> {{trans.language}}</li>
+        
+        </ul>
+
+
+	  
+	<script src="/javascripts/main.js"></script>
+  </body>
+</html>
