@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html >
+<html ng-app = "translateApp" >
   <head>
     <title></title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel = "stylesheet" type ="text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/superhero/bootstrap.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
   </head>
-  <body>
+  <body ng-controller = "quizController">
 
-  <h1> Translate Quiz </h1>
-	  
-    
+  <h1> {{greeting}}</h1>
+  <!-- <form>
+    <input type = 'text' placeholder='What language?'>
+    <input type = "submit">	   -->
+
+<p class = "quizSelect"> Select Quiz Language </p> 
+
+<select class = "selector" ng-change= "findQuiz()" ng-model="search.quiz" > 
+  
+
+              <option value = "Spanish">Spanish</option>
+              <option value = "French">French</option>  
+              <option value = "German">German</option> 
 	  
 	<script src="/javascripts/main.js"></script>
   </body>

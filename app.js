@@ -2,7 +2,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var googleTranslate = require('google-translate')('AIzaSyAwa-GuHap0skrjW7IWqfLQ5c40Lfl_GkE');
+var mongoose = require('mongoose')
 
+mongoose.connect('mongodb://localhost/quizdb');
+
+
+var quizSchema = mongoose.Schema({
+languages    : {type : String},
+translations : {type : String}
+
+});
+
+var quizInfo = mongoose.model('quizInfo', quizSchema);
 
 // Create Express App Object \\
 var app = express();
@@ -42,10 +53,21 @@ app.post('/translate', function(req,res){
 	
 
 googleTranslate.translate(req.body.word, req.body.language, function(err, translation) {
+
+	if(err){
+		res.send("No Translation Found");
+		console.log(err)
+
+	}
+
+	else{
   console.log(translation);
+  res.send(translation)}
+
+
 });
 	
-	res.redirect('/translate')
+	// res.redirect('/translate')
 
 });
 

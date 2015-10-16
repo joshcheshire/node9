@@ -3,7 +3,11 @@
   <head>
     <title></title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel = "stylesheet" type ="text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/superhero/bootstrap.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
   </head>
   <body ng-controller = "translateController">
@@ -14,11 +18,15 @@
       <input ng-model = "trans.language"  type = 'text' placeholder = 'Translate to What Language?'>
       <input type = 'submit' >
 </form>
-      <ul ng-repeat="data in trans">
-        <li> {{trans.word}}</li>
-        <li> {{trans.language}}</li>
-        
+      <ul>
+        <li> Original word: {{data.originalText}} </li>
+        <li> Translation: {{data.translatedText}}</li>
+        <li> 
         </ul>
+
+        <a href="/quiz" class="btn btn-default">Go to Quiz</a>
+</form>
+    
 
 
 	  
